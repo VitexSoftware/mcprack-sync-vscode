@@ -1,0 +1,27 @@
+Source: mcprack-sync-vscode
+Section: utils
+Priority: optional
+Maintainer: Vítězslav Dvořák <info@vitexsoftware.cz>
+Build-Depends:
+ debhelper-compat (= 13),
+ dh-python,
+ pybuild-plugin-pyproject,
+ python3-all,
+ python3-setuptools,
+ python3-mcprack-client,
+Standards-Version: 4.7.0
+Homepage: https://github.com/VitexSoftware/mcprack-sync-vscode
+Vcs-Git: https://github.com/VitexSoftware/mcprack-sync-vscode.git
+Vcs-Browser: https://github.com/VitexSoftware/mcprack-sync-vscode
+Rules-Requires-Root: no
+
+Package: mcprack-sync-vscode
+Architecture: all
+Depends:
+ ${misc:Depends},
+ ${python3:Depends},
+ python3-mcprack-client,
+Description: keep VS Code Copilot MCP config in sync with mcprack
+ Fetches the user's selected MCP servers from a mcprack instance and merges
+ them into VS Code's User/mcp.json (servers key). Includes an optional
+ systemd user timer.
